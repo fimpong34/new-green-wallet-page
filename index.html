@@ -974,8 +974,8 @@
     z-index: 300;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+    justify-content: flex-start;
+    padding: max(48px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
@@ -987,26 +987,26 @@
   }
 
   .success-body {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 12px 2px 12px;
+    padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .success-check-icon {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background: var(--success);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 14px;
+    margin-bottom: 22px;
     box-shadow: 0 8px 24px rgba(32,213,136,.25);
     animation: success-circle-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     transform: scale(0);
@@ -1023,8 +1023,8 @@
   }
 
   .success-check-icon svg {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     stroke-dasharray: 50;
     stroke-dashoffset: 50;
     animation: success-tick-draw 0.4s ease 0.25s forwards;
@@ -1035,34 +1035,40 @@
   }
 
   .success-heading {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 6px;
-    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+    letter-spacing: -.45px;
   }
 
   .success-subtext {
-    font-size: 13.5px;
+    font-size: 15px;
     color: var(--text-dim);
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
   }
 
+  .success-subtext .coin-icon { width:17px; height:17px; }
+  .success-subtext strong { color:#667a53; font-size:17px; }
+  .success-receipt { width:100%; margin-bottom:28px; border-top:1px solid var(--border-line); border-bottom:1px solid var(--border-line); }
+  .success-receipt-row { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-bottom:1px solid var(--border-line); font-size:15px; }
+  .success-receipt-row:last-child { border-bottom:0; }
+  .success-receipt-row span { color:#6f7077; font-weight:500; }
+  .success-receipt-row strong { color:var(--text); font-size:15.5px; font-weight:700; text-align:right; }
+
   .success-extra { width:100%; text-align:left; }
-  .success-section-kicker { margin:4px 2px 10px; color:var(--text-dim); font-size:12.5px; font-weight:500; }
-  
   .gifter-card { 
     display: flex; 
     align-items: center; 
     gap: 14px; 
-    padding: 16px; 
-    margin-bottom: 22px; 
+    padding: 20px 8px;
+    margin-bottom: 24px;
     background: #FFFFFF; 
-    border: 1px solid var(--border-line); 
-    border-radius: 16px; 
+    border-top: 1px solid var(--border-line);
+    border-bottom: 1px solid var(--border-line);
   }
   .gifter-icon { 
     position: relative; 
@@ -1073,9 +1079,9 @@
     justify-content: center; 
     flex-shrink: 0; 
     border-radius: 12px; 
-    background: #FFF8E7; 
-    font-size: 24px; 
+    background: #050505;
   }
+  .gifter-icon img { width:100%; height:100%; object-fit:cover; border-radius:12px; }
   .gifter-level { 
     position: absolute; 
     right: -4px; 
@@ -1093,8 +1099,10 @@
     font-size: 9.5px; 
     font-weight: 700; 
   }
-  .gifter-copy h3 { margin-bottom: 3px; font-size: 15px; font-weight: 600; color: var(--text); }
-  .gifter-copy p { color: var(--text-dim); font-size: 12px; line-height: 1.4; }
+  .gifter-copy h3 { margin-bottom: 3px; font-size: 16px; font-weight: 700; color: var(--text); }
+  .gifter-copy p { color: var(--text-dim); font-size: 13.5px; line-height: 1.35; }
+  .success-footer { width:100%; }
+  .success-footer .btn { min-height:56px; border-radius:28px; font-size:17px; background:#18cf24; }
 
   .live-card { 
     display: flex; 
@@ -1412,46 +1420,36 @@
 
   <!-- SUCCESS SCREEN -->
   <div class="success-screen" id="successScreen">
-    <div class="top-bar" style="width:100%; padding-left:0; padding-right:0;">
-      <button class="back-btn" id="successBackBtn">‹</button>
-      <div class="top-title"></div>
-      <div style="width:32px;"></div>
-    </div>
-
     <div class="success-body">
       <div class="success-check-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </div>
-      <div class="success-heading">Exchange completed</div>
-      <div class="success-subtext" id="successSubText">You exchanged for 250 Coins.</div>
+      <div class="success-heading">Exchange Completed!</div>
+      <div class="success-subtext">You exchanged for <img src="coin.png" alt="" class="coin-icon"> <strong id="successCoinSummary">250 Coins</strong></div>
+
+      <div class="success-receipt">
+        <div class="success-receipt-row"><span>Recipient</span><strong id="successRecipient">@username</strong></div>
+        <div class="success-receipt-row"><span>Coins Exchanged</span><strong id="successCoinsExchanged">250 Coins</strong></div>
+        <div class="success-receipt-row"><span>Deducted Amount</span><strong id="successDeductedAmount">$3.03</strong></div>
+        <div class="success-receipt-row"><span>Time</span><strong id="successTime">8/20/2026, 7:07:19 AM</strong></div>
+      </div>
 
       <div class="success-extra">
-        <div class="success-section-kicker">Send a Gift to support your favorite content</div>
         <div class="gifter-card">
-          <div class="gifter-icon">⭐<span class="gifter-level">1</span></div>
+          <div class="gifter-icon"><img src="assets/tiktok-logo.webp" alt="TikTok"></div>
           <div class="gifter-copy">
             <h3>Start gifter level</h3>
-            <p>Send your first Gift to embark on gifter level journey and get more rewards as you level up.</p>
+            <p>Send your first Gift to begin your gifter journey and unlock more rewards as you level up.</p>
           </div>
         </div>
 
-        <div class="success-section-kicker">Watch LIVE now</div>
-        <div class="live-card">
-          <div class="live-icon-left">
-            🎥
-          </div>
-          <div class="live-card-content">
-            <h3>Explore trending LIVE streams</h3>
-          </div>
-          <button class="live-explore-btn" type="button">Explore</button>
-        </div>
       </div>
     </div>
 
     <div class="success-footer">
-      <button class="btn btn-primary" id="successDoneBtn">Done</button>
+      <button class="btn btn-primary" id="successDoneBtn">← Go back</button>
     </div>
   </div>
 
@@ -1493,7 +1491,11 @@
     
     const successScreen = document.getElementById('successScreen');
     const successDoneBtn = document.getElementById('successDoneBtn');
-    const successBackBtn = document.getElementById('successBackBtn');
+    const successCoinSummary = document.getElementById('successCoinSummary');
+    const successRecipient = document.getElementById('successRecipient');
+    const successCoinsExchanged = document.getElementById('successCoinsExchanged');
+    const successDeductedAmount = document.getElementById('successDeductedAmount');
+    const successTime = document.getElementById('successTime');
 
     const displayCoinValue = document.getElementById('displayCoinValue');
     const conversionEurText = document.getElementById('conversionEurText');
@@ -1506,7 +1508,6 @@
     const dialogMsgText = document.getElementById('dialogMsgText');
     const dialogMainCoinImg = document.getElementById('dialogMainCoinImg');
     
-    const successSubText = document.getElementById('successSubText');
     const txListContainer = document.getElementById('txListContainer');
     const tabAvailableAmt = document.getElementById('tabAvailableAmt');
     const homeBalanceAmount = document.getElementById('homeBalanceAmount');
@@ -1944,7 +1945,12 @@
         availableCoins = Math.max(0, availableCoins - data.coins);
         pendingBalanceAnimation = { previousUsd, previousCoins, nextUsd: availableUsd, nextCoins: availableCoins };
 
-        successSubText.textContent = `You exchanged for ${data.coins.toLocaleString()} Coins.`;
+        const formattedCoins = `${data.coins.toLocaleString()} Coins`;
+        successCoinSummary.textContent = formattedCoins;
+        successRecipient.textContent = handle;
+        successCoinsExchanged.textContent = formattedCoins;
+        successDeductedAmount.textContent = `$${data.usd}`;
+        successTime.textContent = nowStr;
 
         successScreen.classList.add('open');
 
@@ -2026,7 +2032,6 @@
       showNotification('Successfully sent coins to recipient');
     });
 
-    successBackBtn.addEventListener('click', () => { successScreen.classList.remove('open'); });
 
   })();
 </script>
