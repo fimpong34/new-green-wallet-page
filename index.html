@@ -1182,7 +1182,7 @@
   .input-wrapper::before { content:'@'; flex:0 0 auto; margin-right:12px; color:#717986; font-size:21px; font-weight:500; }
   .input-wrapper:focus-within { border-color:#fe2c55; background:#fff; box-shadow:0 0 0 3px rgba(254,44,85,.10); }
   .tiktok-handle-input { padding:20px 0; color:#161823; font-size:17px; font-weight:700; }
-  .tiktok-handle-input::placeholder { color:#fe2c55; font-weight:600; opacity:.76; }
+  .tiktok-handle-input::placeholder { color:#fe2c55; font-size:14px; font-weight:600; opacity:.76; }
   .tiktok-handle-input:focus::placeholder { color:#fe2c55; opacity:.58; }
   .clear-input-btn { right:14px; width:27px; height:27px; border-radius:50%; background:#e7eaf0; color:#6f7682; font-size:12px; }
   .tiktok-profile-status { min-height:0; margin:0 3px 8px; color:#7b8290; font-size:11.5px; }
@@ -1201,8 +1201,8 @@
   .preset-card { min-height:92px; padding:16px 6px; border:1px solid #dfe3e9; border-radius:18px; background:#fff; box-shadow:none; transition:border-color .15s ease,background .15s ease,transform .15s ease; }
   .preset-card:hover { transform:none; border-color:#b7bdc7; }
   .preset-card:active { transform:scale(.98); }
-  .preset-card.selected { border-color:#9ca3af; background:#f7f8fa; box-shadow:none; }
-  .preset-card.selected::after { content:none; }
+  .preset-card.selected { border-color:#fe2c55; background:#fff4f6; box-shadow:0 0 0 2px rgba(254,44,85,.08); }
+  .preset-card.selected::after { content:'✓'; position:absolute; top:7px; right:9px; color:#fe2c55; font-size:11px; font-weight:900; }
   .preset-coin-val { margin-bottom:6px; font-size:16px; }
   .preset-usd-val { color:#727a87; font-size:14px; }
 
@@ -1214,8 +1214,8 @@
   .policy-top b { color:#161823; font-weight:750; }
 
   .sheet-footer { padding:11px 20px max(12px,env(safe-area-inset-bottom)); border-top:1px solid #eef0f3; background:rgba(255,255,255,.96); box-shadow:none; }
-  .sheet-footer .btn-primary { min-height:50px; border-radius:14px; background:#161823; box-shadow:none; font-size:15.5px; }
-  .sheet-footer .btn-primary:hover { background:#2f313b; }
+  .sheet-footer .btn-primary { min-height:50px; border-radius:14px; background:#fe2c55; box-shadow:0 9px 20px rgba(254,44,85,.20); font-size:15.5px; }
+  .sheet-footer .btn-primary:hover { background:#e8244c; }
   .sheet-footer .btn-primary:active { transform:scale(.985); box-shadow:none; }
   @media (min-width:640px) { .phone-container { max-width:480px; max-height:900px; border-radius:28px; box-shadow:0 24px 80px rgba(22,24,35,.15); } .exchange-sheet { border-radius:28px; } }
   @media (max-width:360px) { .exchange-sheet .sheet-body { padding-left:15px; padding-right:15px; } .exchange-header-balance { font-size:30px; } .preset-card { padding-left:3px; padding-right:3px; } .preset-coin-val { font-size:13.5px; } }
