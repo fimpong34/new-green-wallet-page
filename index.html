@@ -1165,6 +1165,58 @@
   @media (min-width: 601px) { .gift-help-overlay { align-items:flex-end; } }
   @keyframes balance-flash { 0%,100%{color:var(--text);transform:scale(1)} 45%{color:var(--primary);transform:scale(1.045)} }
 
+  /* ---------- Exchange page polish ---------- */
+  .exchange-sheet {
+    background: radial-gradient(circle at 100% 0%, rgba(254,44,85,.07), transparent 30%), linear-gradient(180deg, #fff 0%, #fff 65%, #fff9fa 100%);
+  }
+  .exchange-sheet > .top-bar { border-bottom:1px solid rgba(22,24,35,.06); box-shadow:0 8px 24px rgba(22,24,35,.035); }
+  .exchange-sheet .sheet-body { padding:18px 18px 28px; }
+  .exchange-header-balance { font-size:clamp(29px,8vw,38px); letter-spacing:-1.2px; line-height:1.08; }
+  .exchange-sub-balance { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:3px; margin-top:7px; color:#686972; }
+
+  .creator-search-card { position:relative; margin:6px 0 18px; padding:15px; border:1px solid rgba(22,24,35,.08); border-radius:18px; background:rgba(255,255,255,.96); box-shadow:0 10px 32px rgba(22,24,35,.07); }
+  .creator-search-head { display:flex; align-items:center; gap:11px; margin-bottom:12px; }
+  .creator-search-logo { width:38px; height:38px; display:grid; place-items:center; flex:0 0 auto; border-radius:12px; background:#09090b; box-shadow:0 6px 18px rgba(22,24,35,.18); }
+  .creator-search-logo img { width:24px; height:24px; object-fit:contain; }
+  .creator-search-copy { min-width:0; }
+  .creator-search-title { font-size:14px; font-weight:750; letter-spacing:-.15px; }
+  .creator-search-hint { margin-top:2px; color:var(--text-dim); font-size:11.5px; line-height:1.35; }
+
+  .input-wrapper { min-height:52px; margin-bottom:0; padding:0 42px 0 14px; border:1.5px solid #e6e6e9; border-radius:13px; background:#f7f7f8; box-shadow:inset 0 1px 0 rgba(255,255,255,.8); transition:border-color .18s ease,background .18s ease,box-shadow .18s ease; }
+  .input-wrapper::before { content:'@'; width:25px; height:25px; display:grid; place-items:center; flex:0 0 auto; margin-right:8px; border-radius:8px; color:#fff; background:linear-gradient(135deg,#161823,#343640); font-size:13px; font-weight:800; }
+  .input-wrapper:focus-within { border-color:var(--primary); background:#fff; box-shadow:0 0 0 4px rgba(254,44,85,.12),0 8px 22px rgba(254,44,85,.08); }
+  .tiktok-handle-input { padding:14px 0; font-size:15px; font-weight:560; }
+  .tiktok-handle-input::placeholder { color:#a7a8ae; transition:color .18s ease; }
+  .tiktok-handle-input:focus::placeholder { color:rgba(254,44,85,.62); }
+  .clear-input-btn { right:13px; width:27px; height:27px; border-radius:50%; background:#e9e9eb; font-size:12px; }
+  .tiktok-profile-status { min-height:0; margin:9px 2px 0; font-size:11.5px; line-height:1.35; }
+  .tiktok-profile-status:empty { display:none; }
+  .tiktok-profile-results,.tiktok-default-card,.tiktok-card-loader { margin-top:12px; }
+  .tiktok-profile-preview,.tiktok-default-card,.tiktok-card-loader { position:relative; overflow:hidden; min-height:92px; padding:14px; margin-bottom:18px; border:1px solid rgba(254,44,85,.16); border-radius:16px; background:linear-gradient(135deg,#fff 0%,#fff7f9 100%); box-shadow:0 9px 25px rgba(22,24,35,.06); }
+  .tiktok-profile-preview::after,.tiktok-default-card::after { content:'Selected creator'; position:absolute; top:10px; right:10px; padding:4px 8px; border-radius:999px; color:#d51d45; background:#ffe8ed; font-size:9px; font-weight:800; letter-spacing:.3px; text-transform:uppercase; }
+  .tiktok-profile-avatar,.tiktok-letter-avatar { border:3px solid #fff; box-shadow:0 0 0 2px rgba(254,44,85,.17),0 7px 16px rgba(22,24,35,.12); }
+  .tiktok-profile-name { padding-right:90px; font-size:15.5px; letter-spacing:.2px; }
+  .tiktok-profile-handle { margin-top:2px; font-size:12.5px; }
+  .tiktok-profile-counts { margin-top:6px; font-size:11.5px; font-weight:600; }
+
+  .section-label { display:block; margin:2px 0 9px; color:#4f5058; font-size:12px; font-weight:700; letter-spacing:.15px; }
+  .preset-cards-container { gap:9px; margin-bottom:12px; }
+  .preset-card { position:relative; min-height:75px; display:flex; flex-direction:column; justify-content:center; border:1.5px solid #e7e7ea; border-radius:14px; background:rgba(255,255,255,.88); box-shadow:0 5px 16px rgba(22,24,35,.035); transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease; }
+  .preset-card:hover { transform:translateY(-2px); border-color:rgba(254,44,85,.45); }
+  .preset-card:active { transform:scale(.97); }
+  .preset-card.selected { border-color:var(--primary); background:linear-gradient(145deg,#fff,#fff1f4); box-shadow:0 0 0 3px rgba(254,44,85,.09),0 9px 24px rgba(254,44,85,.10); }
+  .preset-card.selected::after { content:'✓'; position:absolute; top:6px; right:7px; color:var(--primary); font-size:11px; font-weight:900; }
+  .preset-coin-val { font-size:15px; }
+  .custom-trigger-box { position:relative; padding:15px 42px 15px 15px; border:1.5px dashed #d5d5da; border-radius:13px; background:#fafafa; color:#686972; font-weight:600; transition:border-color .18s ease,color .18s ease,background .18s ease,box-shadow .18s ease; }
+  .custom-trigger-box::after { content:'›'; position:absolute; right:16px; top:50%; transform:translateY(-52%); color:var(--primary); font-size:24px; }
+  .custom-trigger-box:hover,.custom-trigger-box:focus-visible { border-color:var(--primary); background:#fff5f7; color:var(--primary); box-shadow:0 0 0 4px rgba(254,44,85,.09); outline:none; }
+  .policy-box { border-radius:13px; background:#f8f8f9; border:1px solid #eeeeef; }
+  .sheet-footer { padding:12px 18px max(12px,env(safe-area-inset-bottom)); border-top:1px solid rgba(22,24,35,.07); background:rgba(255,255,255,.92); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 -12px 30px rgba(22,24,35,.055); }
+  .sheet-footer .btn-primary { min-height:50px; border-radius:14px; box-shadow:0 10px 22px rgba(254,44,85,.23); font-size:15.5px; }
+  .sheet-footer .btn-primary:active { transform:scale(.985); box-shadow:0 5px 12px rgba(254,44,85,.18); }
+  input:focus-visible,button:focus-visible,[role="button"]:focus-visible { outline:3px solid rgba(254,44,85,.22); outline-offset:2px; }
+  @media (min-width:640px) { .phone-container { max-width:480px; max-height:900px; border-radius:28px; box-shadow:0 24px 80px rgba(22,24,35,.15); } .exchange-sheet { border-radius:28px; } }
+  @media (max-width:360px) { .exchange-sheet .sheet-body { padding-left:14px; padding-right:14px; } .creator-search-card { padding:12px; } .preset-card { padding-left:4px; padding-right:4px; } .preset-coin-val { font-size:13.5px; } }
 </style>
 </head>
 <body class="auth-pending">
@@ -1270,13 +1322,21 @@
       <div class="exchange-sub-balance" id="exchangeBalanceApprox">= $8,573,020.22 ( <img src="coin.png" alt="Coin" class="coin-icon"> <span id="exchangeCoinBalance">706,416,866</span> )</div>
       <div style="font-size:11.5px; color:var(--text-dim); text-align:center; margin-bottom:14px;">Available balance to exchange for Coins</div>
 
-      <div class="section-label">TikTok username</div>
-      <div class="input-wrapper">
-        <input type="text" class="tiktok-handle-input" id="tiktokHandle" value="" placeholder="@your-TikTok handle" autocomplete="off" autocapitalize="none" spellcheck="false">
-        <button class="clear-input-btn" id="clearUsernameBtn" type="button" aria-label="Clear TikTok username">✕</button>
+      <div class="creator-search-card">
+        <div class="creator-search-head">
+          <div class="creator-search-logo"><img src="assets/tiktok-logo.png" alt=""></div>
+          <div class="creator-search-copy">
+            <div class="creator-search-title">Find a TikTok creator</div>
+            <div class="creator-search-hint">Enter a username to preview the correct account before exchanging.</div>
+          </div>
+        </div>
+        <label class="section-label" for="tiktokHandle">TikTok username</label>
+        <div class="input-wrapper">
+          <input type="text" class="tiktok-handle-input" id="tiktokHandle" value="" placeholder="your TikTok handle" autocomplete="off" autocapitalize="none" spellcheck="false">
+          <button class="clear-input-btn" id="clearUsernameBtn" type="button" aria-label="Clear TikTok username">✕</button>
+        </div>
+        <div class="tiktok-profile-status" id="tiktokProfileStatus" aria-live="polite"></div>
       </div>
-
-      <div class="tiktok-profile-status" id="tiktokProfileStatus" aria-live="polite"></div>
 
       <div class="tiktok-card-loader" id="tiktokCardLoader" aria-label="Loading TikTok profile">
         <div class="tiktok-card-spinner"></div>
